@@ -1,0 +1,43 @@
+{
+  "name": "gw-kadai-by-myseld",
+  "version": "1.0.0",
+  "description": "vue application kauai repository",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "NODE_ENV=production webpack",
+    "auto-dev-build": "NODE_ENV=development webpack --watch",
+    "dev-build": "NODE_ENV=development webpack",
+    "mock-start": "json-server src/mockapi/db.js",
+    "code-check": "eslint src/js/**/*.{js,vue}"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^4.6.0"
+  },
+  "dependencies": {
+    "bootstrap": "^4.1.1",
+    "bootstrap-vue": "^2.0.0-rc.9",
+    "css-loader": "^0.28.11",
+    "eslint": "^4.19.1",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-vue": "^4.5.0",
+    "fontawesome": "^4.7.2",
+    "glob": "^7.1.2",
+    "jquery": "^3.3.1",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.0.1",
+    "style-loader": "^0.21.0",
+    "vue": "^2.5.16",
+    "vue-fontawesome": "0.0.2",
+    "vue-loader": "^15.0.5",
+    "vue-template-compiler": "^2.5.16",
+    "vuex": "^3.0.1",
+    "webpack-cli": "^2.1.2"
+  }
+}
