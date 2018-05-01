@@ -30,6 +30,7 @@
     "fontawesome": "^4.7.2",
     "glob": "^7.1.2",
     "jquery": "^3.3.1",
+    "jquery-ui-dist": "^1.12.1",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.0.1",
     "style-loader": "^0.21.0",

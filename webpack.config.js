@@ -2,6 +2,8 @@ const glob = require("glob");
 
 const javaScriptBundlePath = __dirname + "/../";
 
+const { VueLoaderPlugin } = require('vue-loader')
+
 var entries = {}
 glob.sync("./src/js/**/*.main.js").map(function(file){
     let key = file.match(/[a-z0-9_]*.main.js/i)[0].replace('.main.js', '');
@@ -22,6 +24,9 @@ module.exports = {
             "vuex$": "vuex/dist/vuex.js"
         }
     },
+    plugins: [
+        new VueLoaderPlugin()
+    ],
     module: {
         rules: [
             {
