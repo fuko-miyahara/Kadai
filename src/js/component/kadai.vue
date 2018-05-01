@@ -1,6 +1,6 @@
 <template>
   <div>
-    Hello World!
+    <h1>Hello World!</h1>
   </div>
 </template>
 
@@ -17,5 +17,9 @@
 <style scoped src="../../../node_modules/bootstrap-vue/dist/bootstrap-vue.min.css"></style>
 
 <style scoped>
+
+  h1 {
+    color: pink;
+  }
 
 </style>
