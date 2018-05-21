@@ -1,9 +1,9 @@
 <template>
-  <div class="WholePage">
+  <div>
 
     <header>
-      <h2> Shop Name </h2>
-      <span>Description of the shop will appear here.</span>
+      <h2>Shop Name Here</h2>
+      <span>Shop Description here.</span>
     </header>
 
     <div class="main-container">
@@ -50,7 +50,6 @@
     export default {
         components: {
             FontAwesomeIcon
-
         },
         computed: {
             faCoffee () {
@@ -71,12 +70,12 @@
   header{
     width: 100%;
     height: auto;
-    background-color: lightgray;
+    background-color: #D8C3A5;
     margin-bottom: 20px;
   }
 
   header h2 {
-    color: dimgray;
+    color: #E85A4F;
   }
 
   .category {

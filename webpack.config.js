@@ -8,7 +8,7 @@ var entries = {};
 glob.sync("./webpack/src/js/**/*.main.js").map(function(file){
     let key = file.match(/[a-z0-9_]*.main.js/i)[0].replace('.main.js', '');
     // {key:value}のObject（連想配列形式）を生成
-    entries["./webpack/src/javascript/" + key] = file;
+    entries["gw-kadai-by-myself/webpack/src/javascript/" + key] = file;
 });
 
 module.exports = {
