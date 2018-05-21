@@ -5,7 +5,7 @@ const javaScriptBundlePath = __dirname + "/../";
 const { VueLoaderPlugin } = require('vue-loader');
 
 var entries = {};
-glob.sync("./src/js/**/*.main.js").map(function(file){
+glob.sync("./webpack/src/js/**/*.main.js").map(function(file){
     let key = file.match(/[a-z0-9_]*.main.js/i)[0].replace('.main.js', '');
     // {key:value}のObject（連想配列形式）を生成
     entries["webpack/src/javascript/" + key] = file;
