@@ -98,12 +98,10 @@
             FontAwesomeIcon,
             'b-button': bButton,
             'b-navbar': bNavbar,
-            'b-navbar-toggle': bNavbarToggle,
             'b-navbar-brand': bNavbarBrand,
             'b-navbar-nav': bNabvarNav,
             'b-nav-item': bNavItems,
             'b-nav-form': bNavForms,
-            'b-collapse': bCollapse,
             'b-form-input': bFormInput
         },
         computed: {
