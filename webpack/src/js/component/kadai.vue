@@ -1,50 +1,45 @@
 <template>
   <div>
 
-    <header>
-      <b-navbar
-        toggleable="md"
-        type="dark"
-        variant="info">
-        <b-navbar-toggle
-          target="nav_collapse" />
-        <b-navbar-brand
+    <b-navbar
+      toggleable="md"
+      fixed="top"
+      class="navbar-css">
+      <b-navbar-brand
+        href="#">
+        ShopNameHere
+      </b-navbar-brand>
+      <b-navbar-nav>
+        <b-nav-item
           href="#">
-          NavBar
-        </b-navbar-brand>
-        <b-collapse
-          id="nav_collapse"
-          is-nav>
-          <b-navbar-nav>
-            <b-nav-item
-              href="#">
-              Link1
-            </b-nav-item>
-            <b-nav-item
-              href="#">
-              Link2
-            </b-nav-item>
-          </b-navbar-nav>
-          <!-- Right aligned nav items -->
-          <b-navbar-nav
-            class="ml-auto">
-            <b-nav-form>
-              <b-form-input
-                size="sm"
-                class="mr-sm-2"
-                type="text"
-                placeholder="Search" />
-              <b-button
-                size="sm"
-                class="my-2 my-sm-0"
-                type="submit">
-                Search
-              </b-button>
-            </b-nav-form>
-          </b-navbar-nav>
-        </b-collapse>
-      </b-navbar>
-    </header>
+          New
+        </b-nav-item>
+        <b-nav-item
+          href="#">
+          Popular
+        </b-nav-item>
+      </b-navbar-nav>
+      <!-- Right aligned nav items -->
+      <b-navbar-nav
+        class="ml-auto">
+        <b-nav-form>
+          <b-form-input
+            size="sm"
+            class="mr-sm-2"
+            type="text"
+            placeholder="Search" />
+          <b-button
+            size="sm"
+            class="my-2 my-sm-0"
+            type="submit">
+            Search
+          </b-button>
+        </b-nav-form>
+        <font-awesome-icon
+          :icon="faShoppingCart"
+          class="cart-icon"/>
+      </b-navbar-nav>
+    </b-navbar>
 
     <div class="main-container">
 
@@ -89,14 +84,13 @@
 <script>
     import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
     import faCoffee from '@fortawesome/fontawesome-free-solid/faCoffee'
+    import faShoppingCart from '@fortawesome/fontawesome-free-solid/faShoppingCart'
     import bButton from 'bootstrap-vue/es/components/button/button'
     import bNavbar from 'bootstrap-vue/es/components/navbar/navbar'
-    import bNavbarToggle from 'bootstrap-vue/es/components/navbar/navbar-toggle'
     import bNavbarBrand from 'bootstrap-vue/es/components/navbar/navbar-brand'
     import bNabvarNav from 'bootstrap-vue/es/components/navbar/navbar-nav'
     import bNavItems from 'bootstrap-vue/es/components/nav/nav-item'
     import bNavForms from 'bootstrap-vue/es/components/nav/nav-form'
-    import bCollapse from 'bootstrap-vue/es/components/collapse/collapse'
     import bFormInput from 'bootstrap-vue/es/components/form-input/form-input'
 
     export default {
@@ -115,6 +109,9 @@
         computed: {
             faCoffee () {
                 return faCoffee
+            },
+            faShoppingCart () {
+                return faShoppingCart
             }
         },
         methods: {}
@@ -126,17 +123,14 @@
 
 <style scoped>
 
-  /* HeaderのCSS */
+  /* NavbarのCSS */
 
-  header{
-    width: 100%;
-    height: auto;
+  .navbar-css {
     background-color: #D8C3A5;
-    margin-bottom: 20px;
   }
 
-  header h2 {
-    color: #E85A4F;
+  .cart-icon {
+    margin: 15px;
   }
 
   .category {
