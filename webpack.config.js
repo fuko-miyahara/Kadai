@@ -2,13 +2,13 @@ const glob = require("glob");
 
 const javaScriptBundlePath = __dirname + "/../";
 
-const { VueLoaderPlugin } = require('vue-loader')
+const { VueLoaderPlugin } = require('vue-loader');
 
-var entries = {}
-glob.sync("./src/js/**/*.main.js").map(function(file){
+var entries = {};
+glob.sync("./webpack/src/js/**/*.main.js").map(function(file){
     let key = file.match(/[a-z0-9_]*.main.js/i)[0].replace('.main.js', '');
     // {key:value}のObject（連想配列形式）を生成
-    entries["webpack/src/javascript/" + key] = file;
+    entries["gw-kadai-by-myself/webpack/src/javascript/" + key] = file;
 });
 
 module.exports = {
@@ -31,12 +31,7 @@ module.exports = {
         rules: [
             {
                 enforce: "pre",
-                test: /\.vue$/,
-                loader: "eslint-loader"
-            },
-            {
-                enforce: "pre",
-                test: /\.js$/,
+                test: /\.(vue|js)$/,
                 loader: "eslint-loader"
             },
             {
@@ -48,12 +43,19 @@ module.exports = {
                 }
             },
             {
-                test: /\.scss?$/,
+                test: /\.(scss|css)?$/,
                 loaders: ["style-loader", "css-loader", "sass-loader"]
             },
             {
-                test: /\.scss?$/,
-                loaders: ["style-loader", "css-loader", "sass-loader"]
+                test: /\.(png|jpg|gif)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[ext]'
+                        }
+                    }
+                ]
             }
         ]
     },
