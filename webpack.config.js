@@ -31,12 +31,7 @@ module.exports = {
         rules: [
             {
                 enforce: "pre",
-                test: /\.vue$/,
-                loader: "eslint-loader"
-            },
-            {
-                enforce: "pre",
-                test: /\.js$/,
+                test: /\.(vue|js)$/,
                 loader: "eslint-loader"
             },
             {
@@ -48,12 +43,19 @@ module.exports = {
                 }
             },
             {
-                test: /\.scss?$/,
+                test: /\.(scss|css)?$/,
                 loaders: ["style-loader", "css-loader", "sass-loader"]
             },
             {
-                test: /\.css?$/,
-                loaders: ["style-loader", "css-loader", "sass-loader"]
+                test: /\.(png|jpg|gif)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[ext]'
+                        }
+                    }
+                ]
             }
         ]
     },
