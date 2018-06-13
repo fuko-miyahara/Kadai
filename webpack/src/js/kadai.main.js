@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import KadaiMainComponent from './component/kadai'
+import KadaiMainComponent from './component/page-item-list'
 
 new Vue ({
     el: '#main-container',
