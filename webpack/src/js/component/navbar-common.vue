@@ -4,23 +4,26 @@
     fixed="top"
     class="navbar-css">
     <b-navbar-brand
-      href="#">
+      href="#"
+      class="navbar-logo">
       ShopNameHere
     </b-navbar-brand>
     <b-navbar-nav>
       <b-nav-item
-        href="#">
+        href="#"
+        class="navbar-link">
         New
       </b-nav-item>
       <b-nav-item
-        href="#">
+        href="#"
+        class="navbar-link">
         Popular
       </b-nav-item>
     </b-navbar-nav>
     <!-- Right aligned nav items -->
     <b-navbar-nav
       class="ml-auto">
-      <b-nav-form>
+      <b-nav-form class="navbar-search">
         <b-form-input
           size="sm"
           class="mr-sm-2"
@@ -28,7 +31,7 @@
           placeholder="Search" />
         <b-button
           size="sm"
-          class="my-2 my-sm-0"
+          class="search-button my-2 my-sm-0"
           type="submit">
           Search
         </b-button>
@@ -79,12 +82,34 @@
   /* NavbarのCSS */
 
   .navbar-css {
-    background-color: #D8C3A5;
+    background-color: #2b546a;
     opacity: 0.9;
+    padding: 0 !important;
   }
 
   .cart-icon {
-    margin: 15px;
+    margin: 23px 15px 15px 15px;
+    color: #fff;
+  }
+
+  .navbar-logo {
+    color: #fff !important;
+    padding: 16px 0 16px 32px;
+  }
+
+  .navbar-link a {
+    color: #c3c3c3 !important;
+    font-weight: lighter;
+    display: inline-block;
+  }
+
+  .navbar-search {
+    padding: 16px 0 16px 0;
+  }
+
+  .search-button {
+    background-color: #1d838c;
+    border: none;
   }
 
 </style>

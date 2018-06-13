@@ -5,69 +5,21 @@
 
     <div class="main-container">
 
-      <div class="categories">
-        <div class="category">
-          <span>Food</span>
-        </div>
-        <div class="category">
-          <span>Drinks</span>
-        </div>
-        <div class="category">
-          <span>Category 3</span>
-        </div>
-      </div>
-
       <div class="itemlist">
-        <div class="item">
-          <h5>item#1 Name</h5>
-          <b-button> ADD </b-button>
+        <div
+          v-for="item in items"
+          :key="item.id"
+          class="item">
+          <h5> {{ item.name }} </h5>
           <img
             :src="sampleImagePath"
             width="275.2"
             height="186.88"
             alt="image of the item"
             title="sample image">
-          <span class="item-description">description will appear here.</span>
-        </div>
-        <div class="item">
-          <h5>item#2 Name</h5>
-          <b-button class="add-button"> ADD </b-button>
-          <span>description will appear here.</span>
-        </div>
-        <div class="item">
-          <h5>item#3 Name</h5>
-          <b-button> ADD </b-button>
-          <span>description will appear here.</span>
-        </div>
-        <div class="item">
-          <h5>item#4 Name</h5>
-          <b-button> ADD </b-button>
-          <span>description will appear here.</span>
-        </div>
-        <div class="item">
-          <h5>item#5 Name</h5>
-          <b-button> ADD </b-button>
-          <span>description will appear here.</span>
-        </div>
-        <div class="item">
-          <h5>item#6 Name</h5>
-          <b-button> ADD </b-button>
-          <span>description will appear here.</span>
-        </div>
-        <div class="item">
-          <h5>item#7 Name</h5>
-          <b-button> ADD </b-button>
-          <span>description will appear here.</span>
-        </div>
-        <div class="item">
-          <h5>item#8 Name</h5>
-          <b-button> ADD </b-button>
-          <span>description will appear here.</span>
-        </div>
-        <div class="item">
-          <h5>item#9 Name</h5>
-          <b-button> ADD </b-button>
-          <span>description will appear here.</span>
+          <span class="item-description">{{ item.description }}</span>
+          <span class="item-price">¥{{ item.price }} / 1{{ item.unit }}</span>
+          <b-button class="add-button"> カートに入れる </b-button>
         </div>
       </div>
 
@@ -80,6 +32,7 @@
     import NavBar from './navbar-common'
     import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
     import bButton from 'bootstrap-vue/es/components/button/button'
+    import store from '../store/kadai-store'
 
     export default {
         components: {
@@ -91,6 +44,11 @@
             return {
                 sampleImagePath: "/Users/miyahara/git/gw-kadai/gw-kadai-by-myself/webpack/src/assets/sample-image.png"
             }
+        },
+        computed: {
+          items () {
+              return store.state.items
+          }
         }
     }
 </script>
@@ -106,51 +64,49 @@
     margin: 20px;
   }
 
-  /* categories のCSS */
-
-  .categories {
-    margin-top: 70px;
-    margin-bottom: 20px;
-  }
-
-  .category {
-    margin-right: 10px;
-    display: inline;
-  }
-
   /* items のCSS */
 
   .itemlist {
+    margin-top: 120px;
     text-align: center;
   }
 
   .item {
     display: inline-block;
-    height: 300px;
     width: 30%;
     margin-right: 15px;
+    margin-bottom: 10px;
     border: #DCDCDC 1px solid;
     border-radius: 5px;
-    padding: 10px;
+    padding: 15px;
   }
 
   .item h5 {
-    color: #E98074;
-    margin: 0px;
-    display: inline-block;
-  }
-
-  .add-button {
-    margin-left: 20px;
-    display: inline-block;
-  }
-
-  .item {
-    margin-bottom: 10px;
+    color: #2b546a;
+    margin: 0 0 10px 0;
+    display: block;
   }
 
   .item-description {
     display: block;
+    height: 20px;
+    font-size: 13px;
+    color: #2b546a;
+    margin: 5px 10px;
+  }
+
+  .item-price {
+    display: inline-block;
+    color: #2b546a;
+    margin-right: 10px;
+  }
+
+  .item .add-button {
+    background-color: #ff577b;
+    font-weight: normal;
+    font-size: 10px;
+    padding: 4px 8px;
+    border: none;
   }
 
 </style>
